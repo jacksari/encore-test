@@ -1,4 +1,3 @@
-
 # Encore Test
 
 Proyecto de ejemplo usando [Encore](https://encore.dev/) con TypeScript y Prisma, que expone múltiples endpoints para gestionar recibos (receipts).
@@ -55,6 +54,12 @@ OPENIA_TOKEN=
 encore run
 ```
 
+6. **Ejecutar tests**
+
+```bash
+npx jest
+```
+
 ## 🌐 Endpoints disponibles
 
 Una vez levantado el proyecto:
@@ -64,22 +69,22 @@ Una vez levantado el proyecto:
 
 ### Lista de Endpoints
 
-| Tipo    | Método | Ruta                        | Descripción                      |
-|---------|--------|-----------------------------|----------------------------------|
-| Public  | POST   | `/auth/login`               | `generateToken` (obtener token) |
-| Auth    | POST   | `/receipts/ia`              | `analizeData` - Consulta IA sobre recibos|
-| Auth    | POST   | `/receipts`                 | `createReceipt`                 |
-| Auth    | GET    | `/receipts`                 | `findAll`                        |
-| Auth    | GET    | `/receipts/export`          | `generateFileCsv`               |
-| Public  | GET    | `/uploads/:filename`        | `downloadFile`                  |
-| Auth    | PUT    | `/receipts/:id/status`      | `updateReceiptStatus`           |
+| Tipo   | Método | Ruta                   | Descripción                               |
+| ------ | ------ | ---------------------- | ----------------------------------------- |
+| Public | POST   | `/auth/login`          | `generateToken` (obtener token)           |
+| Auth   | POST   | `/receipts`            | `createReceipt`                           |
+| Auth   | GET    | `/receipts`            | `findAll`                                 |
+| Auth   | GET    | `/receipts/export`     | `generateFileCsv`                         |
+| Auth   | POST   | `/receipts/ia`         | `analizeData` - Consulta IA sobre recibos |
+| Public | GET    | `/uploads/:filename`   | `downloadFile`                            |
+| Auth   | PUT    | `/receipts/:id/status` | `updateReceiptStatus`                     |
 
 ### Preguntas para el api (analizeData)
 
 - ¿Cuánto es el total de IGV de las facturas validadas?
 - Dame el monto total del mes de mayo del 2025
 - Dame el monto total de boletas del mes de junio del 2025
-- Dame el monto total de boletas validadas del mes de junio del 2025 
+- Dame el monto total de boletas validadas del mes de junio del 2025
 
 ## 🔐 Autenticación
 

@@ -9,7 +9,6 @@ import { convertBigInts } from '../helpers/convertBigint';
 import { prisma } from '../../core/prisma.service';
 import applicationContext from '../../applicationContext';
 import { AnalizeDataReceiptDto } from '../dto/analize-data-receipt.dto';
-import { APIError } from 'encore.dev/api';
 
 @Injectable()
 export class ReceiptsService {
@@ -33,7 +32,7 @@ export class ReceiptsService {
 
       return { message: 'recibo creado', status: true };
     } catch (error) {
-      APIError.internal('comunicarse con soporte');
+      return { message: 'comunicarse con soporte', status: false };
     }
   }
 

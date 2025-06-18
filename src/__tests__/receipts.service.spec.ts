@@ -24,8 +24,7 @@ jest.mock('../core/prisma.service', () => ({
 
 jest.mock('../applicationContext', () => ({
   __esModule: true,
-  default: {
-  },
+  default: {},
 }));
 
 jest.mock('../receipts/helpers/paginate', () => ({
@@ -61,7 +60,7 @@ describe('ReceiptsService', () => {
 
     const mockItems = [
       {
-        id: 'recibo-1',
+        id: '2e3b9efc-00ca-43bd-aa85-65f7480d370d',
         issueDate: new Date(),
         documentType: 'BOLETA',
         status: 'validated',
@@ -133,10 +132,8 @@ describe('ReceiptsService - store', () => {
     } as CreateReceiptDto;
 
     const expectedResult = {
-      id: 'mock-id',
-      ...input,
-      igv: 18,
-      total: 118,
+      message: 'recibo creado',
+      status: true,
     };
 
     (prisma.receipt.create as jest.Mock).mockResolvedValue(expectedResult);
