@@ -67,17 +67,19 @@ Una vez levantado el proyecto:
 | Tipo    | Método | Ruta                        | Descripción                      |
 |---------|--------|-----------------------------|----------------------------------|
 | Public  | POST   | `/auth/login`               | `generateToken` (obtener token) |
-| Auth    | POST   | `/receipts/ia`              | `analizeData` - Consulta IA sobre recibos, por ejemplo:<br>
-  - ¿Cuánto es el total de IGV de las facturas validadas?<br>
-  - Dame el monto total del mes de mayo del 2025<br>
-  - Dame el monto total de boletas del mes de junio del 2025<br>
-  - Dame el monto total de boletas validadas del mes de junio del 2025 |
-    
+| Auth    | POST   | `/receipts/ia`              | `analizeData` - Consulta IA sobre recibos|
 | Auth    | POST   | `/receipts`                 | `createReceipt`                 |
 | Auth    | GET    | `/receipts`                 | `findAll`                        |
 | Auth    | GET    | `/receipts/export`          | `generateFileCsv`               |
 | Public  | GET    | `/uploads/:filename`        | `downloadFile`                  |
 | Auth    | PUT    | `/receipts/:id/status`      | `updateReceiptStatus`           |
+
+### Preguntas para el api (analizeData)
+
+- ¿Cuánto es el total de IGV de las facturas validadas?
+- Dame el monto total del mes de mayo del 2025
+- Dame el monto total de boletas del mes de junio del 2025
+- Dame el monto total de boletas validadas del mes de junio del 2025 
 
 ## 🔐 Autenticación
 
