@@ -9,11 +9,11 @@ export const generateToken = api(
     path: '/auth/login',
     expose: true,
   },
-  async (dto: { email: string }): Promise<{ token: string }> => {
+  async (): Promise<{ token: string }> => {
 
     const payload: JwtPayload = {
-      sub: 'user-123',
-      email: 'test@example.com',
+      sub: 'user-jack',
+      email: 'jack@example.com',
     };
 
     const token = jwt.sign(payload, JWT_SECRET, {
